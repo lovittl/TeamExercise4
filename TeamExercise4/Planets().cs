@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace TeamExercise4
 {
-    class Program
+    class Planets__
     {
-        static void Main(string[] args)
-        {
-
-        }
     }
 }
