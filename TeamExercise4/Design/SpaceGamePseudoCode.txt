@@ -1,0 +1,27 @@
+A GAme
+	space-based
+
+
+Start
+
+	you have $ <credits>
+		you can 
+				buy/sell supplies
+				Travel
+if buy/selll
+	purchase suppliesfor $/supply
+		sell suppliesfor $/supply
+
+		if travel
+			targets (start w/1)
+					once selected
+					enter speed between f1 and max warp
+					in warp factor units (double)
+how long did it take?
+Location willbe updated
+
+1c for 5.5ly
+f(wf)=c*x
+0-10
+1-9=f(wf) =wf ^10/3
+=>math.pow(wf,10/3);
