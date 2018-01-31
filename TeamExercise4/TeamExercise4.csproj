@@ -54,8 +54,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Design\SpaceGameClassesDiagram_20180129_11_49_12_Pro.jpg" />
-    <Content Include="Design\SpaceGamePseudoCode.txt" />
+    <Content Include="Design\TextFile1.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
