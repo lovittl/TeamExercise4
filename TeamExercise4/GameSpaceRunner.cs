@@ -8,5 +8,11 @@ namespace TeamExercise4
 {
     class GameSpaceRunner
     {
+        internal void Run()
+        {
+            throw new NotImplementedException();
+
+
+        }
     }
 }
