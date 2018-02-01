@@ -8,5 +8,17 @@ namespace TeamExercise4
 {
     class Ship
     {
+        int minSpeed;
+        int maxSpeed;
+        Planets currentPlanet;
+
+        static void TravelTo(int Planets)
+        {
+            throw new NotImplementedException();
+        }
+        static void LightYears()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

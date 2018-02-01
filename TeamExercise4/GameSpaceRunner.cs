@@ -8,6 +8,7 @@ namespace TeamExercise4
 {
     class GameSpaceRunner
     {
+        // objects of class types
         User royMatt;
         Ship r1;
         Planets Earth;
