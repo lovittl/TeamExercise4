@@ -20,6 +20,11 @@ namespace TeamExercise4
             //amoutnt $, State of cargo, Where we are
             SpaceBanner();
             Console.WriteLine("Main Menu");
+            Console.WriteLine(" 1) Buy");
+            Console.WriteLine(" 2) Sell");
+            Console.WriteLine(" 3) Travel");
+            Console.WriteLine(" 4) Exit");
+            Console.Write("Please select an option:");
             //present menu
             //menu items
             //Buy, Sell, Travel
@@ -51,8 +56,7 @@ namespace TeamExercise4
         }
         public void SpaceBanner()
         {
-            Console.WriteLine("Space Banner");
-            Console.WriteLine($"$ Money'{100}', Location'{"Earth"}', Cargo'{42}'");
+            Console.WriteLine($"SPACE BANNER: Money'{100}', Location'{"Earth"}', Cargo'{42}'");
         }
         void DispayMainMenu()
         {
