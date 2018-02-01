@@ -8,5 +8,15 @@ namespace TeamExercise4
 {
     class User
     {
+        decimal money;
+
+        static void Buy()
+        {
+            throw new NotImplementedException();
+        }
+        static void Sell()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

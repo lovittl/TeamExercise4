@@ -1,0 +1,17 @@
+user starts game
+
+user is presentedwith status banner, money, cargo, location
+
+user is presented with main menu,
+	 1) buy, 2) sell, 3) travel
+
+User wants to buy
+	user selects 1)buy
+		user is presented with buy menu
+			select to item to buy
+				1)water 
+				2)dilithium crystal
+					cargo is updated and displayed to status banner
+					money is updated and displayed to status banner
+
+user is presented with buy menu, items to buy: 1)water 1)dilithum crystals

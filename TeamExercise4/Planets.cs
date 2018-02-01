@@ -6,17 +6,15 @@ using System.Threading.Tasks;
 
 namespace TeamExercise4
 {
-    class Ship
+    class Planets
     {
-        int minSpeed;
-        int maxSpeed;
-        Planets currentPlanet;
-
-        static void TravelTo(int Planets)
+        int products;
+        decimal money;
+        static void Buy()
         {
             throw new NotImplementedException();
         }
-        static void LightYears()
+        static void Sell()
         {
             throw new NotImplementedException();
         }
