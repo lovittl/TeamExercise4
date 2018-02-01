@@ -14,7 +14,7 @@ namespace TeamExercise4
         Planets Earth;
         Planets AC;
 
-        internal void Run()
+        public void Run()
         {
 
             //Status Banner initialization
