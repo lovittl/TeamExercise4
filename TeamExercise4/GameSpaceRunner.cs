@@ -13,20 +13,13 @@ namespace TeamExercise4
         Ship r1;
         Planets Earth;
         Planets AC;
-
         public void Run()
         {
 
             //Status Banner initialization
             //amoutnt $, State of cargo, Where we are
-            Console.WriteLine("Space Banner");
-            Console.WriteLine($"$ Money'{100}', Location'{"Earth"}', Cargo'{42}'");
+            SpaceBanner();
             Console.WriteLine("Main Menu");
-
-
-
-
-
             //present menu
             //menu items
             //Buy, Sell, Travel
@@ -56,7 +49,11 @@ namespace TeamExercise4
 
 
         }
-
+        public void SpaceBanner()
+        {
+            Console.WriteLine("Space Banner");
+            Console.WriteLine($"$ Money'{100}', Location'{"Earth"}', Cargo'{42}'");
+        }
         void DispayMainMenu()
         {
             throw new NotImplementedException(); 
