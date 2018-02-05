@@ -27,6 +27,7 @@ namespace TeamExercise4
         }
         void DispayMainMenu()
         {
+            //moved.
             //present menu
             //menu items
             //Buy, Sell, Travel
