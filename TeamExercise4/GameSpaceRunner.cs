@@ -39,7 +39,7 @@ namespace TeamExercise4
             Console.WriteLine(" 4) Exit");
             Console.Write("Please select an option:");
         }
-        void ElicitUserInput()
+        void ElicitUserInput()//EllicitUserInput branch created.
         {
             throw new NotImplementedException();
         }
