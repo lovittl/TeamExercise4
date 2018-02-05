@@ -1,0 +1,24 @@
+//RUN(); FROM GAMESPACERUNNER();
+
+//Buy Menu
+            //present list of items to select from
+            //water, dilithum crystal
+            //water is stored ship
+            //reduce $
+            //display cargo inventory and $ balance
+            //present main menu
+            //Sell Menu
+            //present list of items to select from
+            //water, dilithum crystal
+            //cargo updated and displayed in banner
+            //increase $
+            //display cargo inventory and $ balance
+            //present main menu
+            //Travel Menu
+            //present list of places to go
+            //AC, EARTH
+            //select speed (what cruise speed would you like to set in WF)
+            //www.calormen.com/star_trek/warpcalc/  v(W) = W(10/3) ) + (10 - W)(-11/3)
+            //CHANGE ship location
+            //update location in banner
+            //display message you traveled <> ly in <> (in time took)
