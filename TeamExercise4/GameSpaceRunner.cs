@@ -18,6 +18,7 @@ namespace TeamExercise4
 
             //Status Banner initialization
             //amoutnt $, State of cargo, Where we are
+            Console.Clear();
             SpaceBanner();
             DispayMainMenu();
         }
