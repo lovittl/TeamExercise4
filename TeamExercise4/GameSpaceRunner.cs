@@ -10,9 +10,9 @@ namespace TeamExercise4
     {
         // objects of class types
         public User royMatt = new User();
-        Ship r1;
-        Planets Earth;
-        Planets AC;
+        public Ship r1 = new Ship();
+        public Planets Earth = new Planets();
+        public Planets AC = new Planets();
         public void Run()
         {
 
@@ -32,14 +32,13 @@ namespace TeamExercise4
             //moved.
             //present menu
             //menu items
-            //Buy, Sell, Travel
             Console.WriteLine("Main Menu");
             Console.WriteLine(" 1) Buy");
             Console.WriteLine(" 2) Sell");
             Console.WriteLine(" 3) Travel");
             Console.WriteLine(" 4) Exit");
         }
-        void ElicitUserInput()//EllicitUserInput branch created.
+        void ElicitUserInput()//Takes user input and calls method related to selection.
         {
             Console.Write("Please select an option:");
             int choice = int.Parse(Console.ReadLine());

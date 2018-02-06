@@ -12,11 +12,13 @@ namespace TeamExercise4
         decimal money;
         static void Buy()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("do buy stuff");
+            //TODO planets.buy
         }
         static void Sell()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("do sell stuff");
+            //TODO planets.sell
         }
     }
 }

@@ -14,11 +14,21 @@ namespace TeamExercise4
 
         public void TravelTo()
         {
-            throw new NotImplementedException();
+            //TODO Ship.TravelTo
+            Console.WriteLine("Which Planet do you want to travel to");
+            //ask user which planet would you like to travel to?
+            //present user with list of Planets to travel to.
+            //user selects planet and warp speed to travel at.
+            //ship warps to planet and data about the warp is calculated and t+S+D stored
+              //in Ship.LightYears.
+            //user is presented with warp data.
+            //update SpaceBanner Location field and time elapsed during last warp.
         }
         public void LightYears()
         {
-            throw new NotImplementedException();
+            //TODO Ship.LightYears()
+            Console.WriteLine("calculating time traveled buffering, buffering");
+            //formula to calculate time traveled based on warp speed and distance.
         }
     }
 }
