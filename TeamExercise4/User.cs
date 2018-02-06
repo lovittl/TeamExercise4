@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace TeamExercise4
 {
-    class User
+    public class User
     {
         decimal money;
 
-        static void Buy()
+        public void Buy()
         {
             throw new NotImplementedException();
         }
-        static void Sell()
+        public void Sell()
         {
             throw new NotImplementedException();
         }

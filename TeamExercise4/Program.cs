@@ -17,9 +17,10 @@ namespace TeamExercise4
             Console.WriteLine("The objective is to become the richest space trader.");
             Console.WriteLine("Godspeed Trader!");
             Console.WriteLine("Hit enter to continue.");
-            Console.ReadLine();
+            Console.ReadLine(); //stops execution to view splash
             GameSpaceRunner runner = new GameSpaceRunner();
             runner.Run();
+
         }
     }
 }

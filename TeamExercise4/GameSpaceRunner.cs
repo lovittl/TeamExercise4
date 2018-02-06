@@ -9,7 +9,7 @@ namespace TeamExercise4
     class GameSpaceRunner
     {
         // objects of class types
-        User royMatt;
+        public User royMatt = new User();
         Ship r1;
         Planets Earth;
         Planets AC;
@@ -21,6 +21,7 @@ namespace TeamExercise4
             Console.Clear();
             SpaceBanner();
             DispayMainMenu();
+            ElicitUserInput();
         }
         public void SpaceBanner()
         {
@@ -37,11 +38,32 @@ namespace TeamExercise4
             Console.WriteLine(" 2) Sell");
             Console.WriteLine(" 3) Travel");
             Console.WriteLine(" 4) Exit");
-            Console.Write("Please select an option:");
         }
         void ElicitUserInput()//EllicitUserInput branch created.
         {
-            throw new NotImplementedException();
+            Console.Write("Please select an option:");
+            int choice = int.Parse(Console.ReadLine());
+
+            switch (choice)
+            {
+                case 1:
+                    royMatt.Buy();
+                    break;
+                case 2:
+                    royMatt.Sell();
+                    break;
+                case 3:
+                    r1.TravelTo();
+                    break;
+                case 4:
+                    Console.WriteLine("goodbye");
+                    break;
+                default:
+                    Console.WriteLine("too much space beer, try again");
+                    break;
+            }
+                
+
         }
 
     }

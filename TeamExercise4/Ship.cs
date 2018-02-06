@@ -12,11 +12,11 @@ namespace TeamExercise4
         int maxSpeed;
         Planets currentPlanet;
 
-        static void TravelTo(int Planets)
+        public void TravelTo()
         {
             throw new NotImplementedException();
         }
-        static void LightYears()
+        public void LightYears()
         {
             throw new NotImplementedException();
         }
