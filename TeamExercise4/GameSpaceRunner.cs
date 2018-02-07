@@ -22,6 +22,7 @@ namespace TeamExercise4
             SpaceBanner();
             DispayMainMenu();
             ElicitUserInput();
+            //impliment array of planets
         }
         public void SpaceBanner()
         {
