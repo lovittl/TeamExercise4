@@ -40,29 +40,42 @@ namespace TeamExercise4
         }
         void ElicitUserInput()//Takes user input and calls method related to selection.
         {
-            Console.Write("Please select an option:");
-            int choice = int.Parse(Console.ReadLine());
+            bool quit = false;
 
-            switch (choice)
+            do
             {
-                case 1:
-                    royMatt.Buy();
-                    break;
-                case 2:
-                    royMatt.Sell();
-                    break;
-                case 3:
-                    r1.TravelTo();
-                    break;
-                case 4:
-                    Console.WriteLine("goodbye");
-                    break;
-                default:
-                    Console.WriteLine("too much space beer, try again");
-                    break;
-            }
-                
+                Console.Write("Please select an option:");
+                int choice = int.Parse(Console.ReadLine());
 
+                switch (choice)
+                {
+                    case 1:
+                        Console.Clear();
+                        SpaceBanner();
+                        royMatt.Buy();
+                        break;
+                    case 2:
+                        Console.Clear();
+                        SpaceBanner();
+                        royMatt.Sell();
+                        break;
+                    case 3:
+                        Console.Clear();
+                        SpaceBanner();
+                        r1.TravelTo();
+                        break;
+                    case 4:
+                        Console.Clear();
+                        SpaceBanner();
+                        Console.WriteLine("goodbye");
+                        quit = true;
+                        break;
+                    default:
+                        Console.WriteLine("too much space beer, try again");
+                        break;
+                }
+            }
+            while (!quit);
         }
 
     }
