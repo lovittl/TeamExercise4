@@ -16,12 +16,10 @@ namespace TeamExercise4
             { new Planet( "Earth", 10.00m, 8.00m)
             , new Planet( "AC", 20.00m, 1000.00m)
             };
-
+        //
         public void Run()
         {
             bool quit;
-            //Status Banner initialization
-            //amoutnt $, State of cargo, Where we are
             do
             {
                 Console.Clear();
@@ -30,10 +28,8 @@ namespace TeamExercise4
                 quit = ElicitUserInput();
             }
             while (!quit);
-          
-            //impliment array of planets
         }
-
+        // Displays Money, Location, and Cargo.
         public void SpaceBanner()
         {
 
@@ -41,18 +37,17 @@ namespace TeamExercise4
                 $" Cargo {r1.cargoHold} Space Beers");
             //
         }
+        // Displays Main Menu Options
         void DispayMainMenu()
         {
-            //moved.
-            //present menu
-            //menu items
             Console.WriteLine("Main Menu");
             Console.WriteLine(" 1) Buy");
             Console.WriteLine(" 2) Sell");
             Console.WriteLine(" 3) Travel");
             Console.WriteLine(" 4) Exit");
         }
-        bool ElicitUserInput()//Takes user input and calls method related to selection.
+        // Handles Main Navigation
+        bool ElicitUserInput()
         {
             bool quit = false;
             bool isValid = false;
@@ -72,7 +67,7 @@ namespace TeamExercise4
                             r1.cargoHold += royMatt.Buy(this.currentPlanet);
                             break;
                         case 2:
-                            royMatt.Sell();
+                            r1.cargoHold -= royMatt.Sell(r1.cargoHold, this.currentPlanet);
                             break;
                         case 3:
                             r1.TravelTo();

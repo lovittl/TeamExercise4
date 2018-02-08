@@ -11,19 +11,18 @@ namespace TeamExercise4
 
         public decimal currentUser;
         public decimal money = 100.00m;
-          //take a current planet parameter.      
+        //take a current planet parameter.      
         public int Buy(Planet currentPlanet) //Buy allows user to purchase cargo on a given Planet.        
         {
             bool isValid = false;
             int quantity = 0;
-            //TODO user.buy
             Console.WriteLine("Available items for purchased:\n");
             Console.WriteLine("1) Space Beer");
             Console.WriteLine("2) Main Menu");
             //increase cargo in ship and decrease $ in user update Space Banner.
             //ask user what next, buy again? return to main menu?
             //leave buy menu and return to main menu.
-            
+
             do
             {
                 Console.Write("Choose the item you wish to buy. Enter the item number:");
@@ -40,8 +39,16 @@ namespace TeamExercise4
                             Console.Write("\nEnter the number of beers you would like to purchase:");
                             quantity = int.Parse(Console.ReadLine());
                             decimal total = quantity * currentPlanet.buyPrice;
-                            Console.WriteLine($"Your total: ${total}");
-                            money -= total;
+                            if (total > 0 && total <= money)
+                            {
+                                Console.WriteLine($"Your total: ${total}");
+                                money -= total;
+                            }
+                            else
+                            {
+                                isValid = false;
+                                Console.Write("Insufficient Funds");
+                            }
                             break;
                         case 2:
                             isValid = true;
@@ -59,16 +66,34 @@ namespace TeamExercise4
             } while (!isValid);
             return quantity;
         }
-        public void Sell()
+        public int Sell(int cargo, Planet presentPlanet)
         {
-            Console.WriteLine("select item to be sold, cargo decreses in ship and " +
-            "money increases in user update Space Banner ask user what next, buy " +
-            "again? return to main menu?");
-            //TODO user.sell
-            //select item to be sold, 
-            //cargo decreses in ship and money increases in user 
-            //update Space Banner
-            //ask user what next, buy again? return to main menu?
+            bool isValid = false;
+            int quantity = 0;
+            Console.Write($"You have {cargo} Space Beers. They sell for {presentPlanet.sellPrice}" +
+                "How many would you like to sell?");
+            do
+            {
+                try
+                {
+                    quantity = int.Parse(Console.ReadLine());
+                    if (quantity >= 0 && quantity <= cargo)
+                    {
+                        money += quantity * presentPlanet.sellPrice;
+                        isValid = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("You can't do that.");
+                    }
+                }
+                catch (FormatException ex2)
+                {
+                    isValid = false;
+                }
+            }
+            while (!isValid);
+            return quantity;
         }
         public User()
         {
