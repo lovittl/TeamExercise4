@@ -11,7 +11,7 @@ namespace TeamExercise4
         int minSpeed;
         int maxSpeed;
         Planet currentPlanet;
-        string cargoHold = null;
+        public int cargoHold = 0;
 
         public void TravelTo()
         {
