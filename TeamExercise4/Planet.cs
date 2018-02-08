@@ -6,19 +6,29 @@ using System.Threading.Tasks;
 
 namespace TeamExercise4
 {
-    class Planets
+    class Planet
     {
         int products;
         decimal money;
-        static void Buy()
+        public string name;
+
+        public decimal buyPrice;
+        public decimal sellPrice;
+
+        static void DisplayGoods()
         {
-            Console.WriteLine("do buy stuff");
-            //TODO planets.buy
         }
+
         static void Sell()
         {
             Console.WriteLine("do sell stuff");
             //TODO planets.sell
+        }
+        public Planet(string name, decimal buyPrice, decimal sellPrice)
+        {
+            this.name = name;
+            this.buyPrice = buyPrice;
+            this.sellPrice = sellPrice;
         }
     }
 }

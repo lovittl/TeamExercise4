@@ -8,14 +8,17 @@ namespace TeamExercise4
 {
     public class User
     {
-        decimal money;
+        decimal money = 100.00m;
                 
         public void Buy() //Buy allows user to purchase cargo on a given Planet.        
         {
-            Console.WriteLine("select item to be bought and pay money to buy item."+
-            "increase cargo in ship and decrease $ in user and display in Space Banner."+
-            "leave buy menu and return to main menu.");
+            double price = 00.00;
             //TODO user.buy
+            Console.WriteLine("Available items for purchased:\n");
+            Console.WriteLine($"1) ${price} 1 Gal Water");
+            Console.WriteLine($"2) ${price} Lithum Crystals");
+            Console.WriteLine($"3) ${price} Space Burger");
+            Console.WriteLine($"4) ${price} Space Beer");
             //select item to be bought and pay money to buy item.
             //increase cargo in ship and decrease $ in user update Space Banner.
             //ask user what next, buy again? return to main menu?

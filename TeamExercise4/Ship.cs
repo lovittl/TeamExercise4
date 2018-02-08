@@ -10,7 +10,8 @@ namespace TeamExercise4
     {
         int minSpeed;
         int maxSpeed;
-        Planets currentPlanet;
+        Planet currentPlanet;
+        string cargoHold = null;
 
         public void TravelTo()
         {

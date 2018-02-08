@@ -11,10 +11,13 @@ namespace TeamExercise4
         // objects of class types
         public User royMatt = new User();
         public Ship r1 = new Ship();
-        public Planets Earth = new Planets();
-        public Planets AC = new Planets();
-        public void Run()
-        {
+        public Planet[] planets =
+            { new Planet( "Earth", 10.00m, 8.00m)
+            , new Planet( "AC", 20.00m, 1000.00m)
+            };
+
+    public void Run()
+    {
 
             //Status Banner initialization
             //amoutnt $, State of cargo, Where we are
@@ -47,27 +50,20 @@ namespace TeamExercise4
             {
                 Console.Write("Please select an option:");
                 int choice = int.Parse(Console.ReadLine());
-
+                Console.Clear();
+                SpaceBanner();
                 switch (choice)
                 {
                     case 1:
-                        Console.Clear();
-                        SpaceBanner();
                         royMatt.Buy();
                         break;
                     case 2:
-                        Console.Clear();
-                        SpaceBanner();
                         royMatt.Sell();
                         break;
                     case 3:
-                        Console.Clear();
-                        SpaceBanner();
                         r1.TravelTo();
                         break;
                     case 4:
-                        Console.Clear();
-                        SpaceBanner();
                         Console.WriteLine("goodbye");
                         quit = true;
                         break;
