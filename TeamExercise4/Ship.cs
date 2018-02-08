@@ -13,17 +13,41 @@ namespace TeamExercise4
         Planet currentPlanet;
         public int cargoHold = 0;
 
-        public void TravelTo()
+        public void TravelTo(ref Planet p, Planet[] planets)
         {
             //TODO Ship.TravelTo
+            bool isValid = false;
             Console.WriteLine("Which Planet do you want to travel to");
-            //ask user which planet would you like to travel to?
-            //present user with list of Planets to travel to.
-            //user selects planet and warp speed to travel at.
-            //ship warps to planet and data about the warp is calculated and t+S+D stored
-              //in Ship.LightYears.
-            //user is presented with warp data.
-            //update SpaceBanner Location field and time elapsed during last warp.
+            for (int i = 0; i < planets.Length; ++i) 
+            {
+                Console.WriteLine($"{i + 1}) {planets[i].name}");
+            }
+            do
+            {
+                try
+                {
+                    Console.WriteLine("Choose or exit(0)");
+                    int selection = int.Parse(Console.ReadLine());
+                    if (selection > 1 && selection <= planets.Length)
+                    {
+                        p = planets[selection - 1];
+                        isValid = true;
+                    }
+                    else if (selection == 0)
+                    {
+                        isValid = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("That planet doesn't exist.");
+                    }
+                }
+                catch (FormatException)
+                {
+                    isValid = false;
+                }
+            } while (!isValid);
+
         }
         public void LightYears()
         {

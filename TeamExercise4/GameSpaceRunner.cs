@@ -70,7 +70,7 @@ namespace TeamExercise4
                             r1.cargoHold -= royMatt.Sell(r1.cargoHold, this.currentPlanet);
                             break;
                         case 3:
-                            r1.TravelTo();
+                            r1.TravelTo(ref this.currentPlanet, planets);
                             break;
                         case 4:
                             Console.WriteLine("goodbye");
