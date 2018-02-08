@@ -39,8 +39,16 @@ namespace TeamExercise4
                             Console.Write("\nEnter the number of beers you would like to purchase:");
                             quantity = int.Parse(Console.ReadLine());
                             decimal total = quantity * currentPlanet.buyPrice;
-                            Console.WriteLine($"Your total: ${total}");
-                            money -= total;
+                            if (total > 0 && total <= money)
+                            {
+                                Console.WriteLine($"Your total: ${total}");
+                                money -= total;
+                            }
+                            else
+                            {
+                                isValid = false;
+                                Console.Write("Insufficient Funds");
+                            }
                             break;
                         case 2:
                             isValid = true;
@@ -69,8 +77,15 @@ namespace TeamExercise4
                 try
                 {
                     quantity = int.Parse(Console.ReadLine());
-                    isValid = true;
-                    money += quantity * presentPlanet.sellPrice;
+                    if (quantity >= 0 && quantity <= cargo)
+                    {
+                        money += quantity * presentPlanet.sellPrice;
+                        isValid = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("You can't do that.");
+                    }
                 }
                 catch (FormatException ex2)
                 {
