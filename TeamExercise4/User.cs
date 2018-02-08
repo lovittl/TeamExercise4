@@ -8,21 +8,38 @@ namespace TeamExercise4
 {
     public class User
     {
-        decimal money = 100.00m;
-                
-        public void Buy() //Buy allows user to purchase cargo on a given Planet.        
+        public decimal currentUser;
+        public decimal money = 100.00m;
+        public int quantity;
+          //take a current planet parameter.      
+        public void Buy(Planet currentPlanet) //Buy allows user to purchase cargo on a given Planet.        
         {
-            double price = 00.00;
+            decimal price = 00.00m;
             //TODO user.buy
             Console.WriteLine("Available items for purchased:\n");
-            Console.WriteLine($"1) ${price} 1 Gal Water");
-            Console.WriteLine($"2) ${price} Lithum Crystals");
-            Console.WriteLine($"3) ${price} Space Burger");
-            Console.WriteLine($"4) ${price} Space Beer");
-            //select item to be bought and pay money to buy item.
+            Console.WriteLine($"1) Space Beer");
+            Console.WriteLine();
+            Console.Write("Choose the item you wish to buy. Enter the item number:");
             //increase cargo in ship and decrease $ in user update Space Banner.
             //ask user what next, buy again? return to main menu?
             //leave buy menu and return to main menu.
+            int choice = int.Parse(Console.ReadLine());
+            switch (choice)
+            {
+                //select item to be bought and pay money to buy item.
+                case 1:
+                    Console.WriteLine("\nSpace Beer:");
+                    Console.WriteLine($"Beer costs {currentPlanet.buyPrice} on {currentPlanet.name}");
+                    Console.Write("\nEnter the number of beers you would like to purchase:");
+                    int quantity = int.Parse(Console.ReadLine());
+                    decimal total = quantity * currentPlanet.buyPrice;
+                    Console.WriteLine($"Your total: ${total}");
+                    money -= total;
+                    break;
+                default:
+                    Console.WriteLine();
+                    break;
+            }
         }
         public void Sell()
         {
@@ -35,6 +52,9 @@ namespace TeamExercise4
             //update Space Banner
             //ask user what next, buy again? return to main menu?
         }
-
+        public User()
+        {
+            this.currentUser = money;
+        }
     }
 }

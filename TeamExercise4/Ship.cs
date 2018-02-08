@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TeamExercise4
 {
-    class Ship
+    public class Ship
     {
         int minSpeed;
         int maxSpeed;

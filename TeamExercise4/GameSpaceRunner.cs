@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace TeamExercise4
 {
-    class GameSpaceRunner
+    public class GameSpaceRunner
     {
         // objects of class types
+        public Planet currentPlanet;
         public User royMatt = new User();
         public Ship r1 = new Ship();
         public Planet[] planets =
@@ -18,7 +19,6 @@ namespace TeamExercise4
 
     public void Run()
     {
-
             //Status Banner initialization
             //amoutnt $, State of cargo, Where we are
             Console.Clear();
@@ -27,9 +27,12 @@ namespace TeamExercise4
             ElicitUserInput();
             //impliment array of planets
         }
-        public void SpaceBanner()
+
+        public void SpaceBanner(decimal money)
         {
-            Console.WriteLine($"SPACE BANNER: Money'{100}', Location'{"Earth"}', Cargo'{42}'");
+
+            Console.WriteLine($"SPACE BANNER: Money'{money}', Location'{"Earth"}', Cargo'{42}'");
+            //
         }
         void DispayMainMenu()
         {
@@ -55,7 +58,7 @@ namespace TeamExercise4
                 switch (choice)
                 {
                     case 1:
-                        royMatt.Buy();
+                        royMatt.Buy(this.currentPlanet);
                         break;
                     case 2:
                         royMatt.Sell();
@@ -73,6 +76,10 @@ namespace TeamExercise4
                 }
             }
             while (!quit);
+        }
+        public GameSpaceRunner()
+        {
+            this.currentPlanet = planets[0];
         }
 
     }
