@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace TeamExercise4
 {
-    class Ship
+    public class Ship
     {
         int minSpeed;
         int maxSpeed;
-        Planets currentPlanet;
+        Planet currentPlanet;
+        public int cargoHold = 0;
 
         public void TravelTo()
         {

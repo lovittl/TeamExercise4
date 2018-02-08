@@ -6,27 +6,40 @@ using System.Threading.Tasks;
 
 namespace TeamExercise4
 {
-    class GameSpaceRunner
+    public class GameSpaceRunner
     {
         // objects of class types
+        public Planet currentPlanet;
         public User royMatt = new User();
         public Ship r1 = new Ship();
-        public Planets Earth = new Planets();
-        public Planets AC = new Planets();
+        public Planet[] planets =
+            { new Planet( "Earth", 10.00m, 8.00m)
+            , new Planet( "AC", 20.00m, 1000.00m)
+            };
+
         public void Run()
         {
-
+            bool quit;
             //Status Banner initialization
             //amoutnt $, State of cargo, Where we are
-            Console.Clear();
-            SpaceBanner();
-            DispayMainMenu();
-            ElicitUserInput();
+            do
+            {
+                Console.Clear();
+                SpaceBanner();
+                DispayMainMenu();
+                quit = ElicitUserInput();
+            }
+            while (!quit);
+          
             //impliment array of planets
         }
+
         public void SpaceBanner()
         {
-            Console.WriteLine($"SPACE BANNER: Money'{100}', Location'{"Earth"}', Cargo'{42}'");
+
+            Console.WriteLine($"SPACE BANNER: Money {royMatt.money}, Location {currentPlanet.name}," +
+                $" Cargo {r1.cargoHold} Space Beers");
+            //
         }
         void DispayMainMenu()
         {
@@ -39,44 +52,52 @@ namespace TeamExercise4
             Console.WriteLine(" 3) Travel");
             Console.WriteLine(" 4) Exit");
         }
-        void ElicitUserInput()//Takes user input and calls method related to selection.
+        bool ElicitUserInput()//Takes user input and calls method related to selection.
         {
             bool quit = false;
+            bool isValid = false;
 
             do
             {
-                Console.Write("Please select an option:");
-                int choice = int.Parse(Console.ReadLine());
-
-                switch (choice)
+                try
                 {
-                    case 1:
-                        Console.Clear();
-                        SpaceBanner();
-                        royMatt.Buy();
-                        break;
-                    case 2:
-                        Console.Clear();
-                        SpaceBanner();
-                        royMatt.Sell();
-                        break;
-                    case 3:
-                        Console.Clear();
-                        SpaceBanner();
-                        r1.TravelTo();
-                        break;
-                    case 4:
-                        Console.Clear();
-                        SpaceBanner();
-                        Console.WriteLine("goodbye");
-                        quit = true;
-                        break;
-                    default:
-                        Console.WriteLine("too much space beer, try again");
-                        break;
+                    Console.Write("Please select an option:");
+                    int choice = int.Parse(Console.ReadLine());
+                    Console.Clear();
+                    SpaceBanner();
+                    isValid = true;
+                    switch (choice)
+                    {
+                        case 1:
+                            r1.cargoHold += royMatt.Buy(this.currentPlanet);
+                            break;
+                        case 2:
+                            royMatt.Sell();
+                            break;
+                        case 3:
+                            r1.TravelTo();
+                            break;
+                        case 4:
+                            Console.WriteLine("goodbye");
+                            quit = true;
+                            break;
+                        default:
+                            isValid = false;
+                            Console.WriteLine("too much space beer, try again");
+                            break;
+                    }
+                }
+                catch (FormatException ex)
+                {
+                    isValid = false;
                 }
             }
-            while (!quit);
+            while (!quit && !isValid);
+            return quit;
+        }
+        public GameSpaceRunner()
+        {
+            this.currentPlanet = planets[0];
         }
 
     }
