@@ -30,7 +30,7 @@ namespace TeamExercise4
                                   "to return to the main menu:");
                     int selection = int.Parse(Console.ReadLine());
 
-                    if (selection > 1 && selection <= planets.Length)
+                    if (selection > 0 && selection <= planets.Length)
                     {
                         p = planets[selection - 1];
                         isValid = true;
