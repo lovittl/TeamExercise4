@@ -82,6 +82,7 @@ namespace TeamExercise4
 
                         case 4:
                             Console.WriteLine("\nThanks for playing! Until your next adventure!\n");
+                            Console.Write("Press enter to exit.");
                             Console.ReadLine();
                             quit = true;
                             break;

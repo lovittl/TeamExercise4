@@ -49,7 +49,7 @@ namespace TeamExercise4
                             else
                             {
                                 isValid = false;
-                                Console.Write("Insufficient Funds");
+                                Console.Write("Insufficient Funds!\n");
                             }
                             break;
 
@@ -80,8 +80,9 @@ namespace TeamExercise4
             bool isValid = false;
             int quantity = 0;
 
-            Console.Write($"\nYou can get ${presentPlanet.sellPrice} a Beer.");
-            Console.Write("Enter the number of beers you wish to sell or enter \n" +
+            Console.WriteLine("Space Beer:");
+            Console.Write($"${presentPlanet.sellPrice} a Beer.\n");
+            Console.Write("\nEnter the number of beers you wish to sell or enter \n" +
                           "zero (0) to return to the main menu:");
             do
             {
@@ -97,7 +98,8 @@ namespace TeamExercise4
 
                     else
                     {
-                        Console.WriteLine("You can't do that.");
+                        Console.WriteLine("You can't do that, please enter number of Beers you " +
+                                          "wish to sell");
                     }
                 }
 
