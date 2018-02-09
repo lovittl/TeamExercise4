@@ -59,7 +59,7 @@ namespace TeamExercise4
                             break;
                     }
                 }
-                catch (FormatException ex1)
+                catch (FormatException)
                 {
                     isValid = false;
                 }
@@ -87,7 +87,7 @@ namespace TeamExercise4
                         Console.WriteLine("You can't do that.");
                     }
                 }
-                catch (FormatException ex2)
+                catch (FormatException)
                 {
                     isValid = false;
                 }

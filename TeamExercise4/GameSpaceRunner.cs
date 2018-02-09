@@ -82,7 +82,7 @@ namespace TeamExercise4
                             break;
                     }
                 }
-                catch (FormatException ex)
+                catch (FormatException)
                 {
                     isValid = false;
                 }
