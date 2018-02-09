@@ -10,7 +10,7 @@ namespace TeamExercise4
     {
         static void Main(string[] args)
         {
-            //Splash screen explaining a background on the game
+            // Splash screen explaining a background on the game
             Console.WriteLine("** WELCOME TO INTERSTELLAR TRADER! **\n");
             Console.WriteLine("In this game you can travel to different planets, trade goods, " +
                               "and make money.\n");
