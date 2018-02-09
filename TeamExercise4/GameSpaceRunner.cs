@@ -8,18 +8,20 @@ namespace TeamExercise4
 {
     public class GameSpaceRunner
     {
-        // objects of class types
+        // Objects of class types
         public Planet currentPlanet;
         public User royMatt = new User();
         public Ship r1 = new Ship();
         public Planet[] planets =
-            { new Planet( "Earth", 10.00m, 8.00m)
-            , new Planet( "AC", 20.00m, 1000.00m)
-            };
-        //
+         { new Planet( "Earth", 10.00m, 8.00m)
+         , new Planet( "AC", 20.00m, 1000.00m)
+         };
+       
+        // Allows user to play the game until they are done and choose to quit
         public void Run()
         {
             bool quit;
+
             do
             {
                 Console.Clear();
@@ -29,15 +31,16 @@ namespace TeamExercise4
             }
             while (!quit);
         }
-        // Displays Money, Location, and Cargo.
+        
+        // Displays money, location, and cargo
         public void SpaceBanner()
         {
 
-            Console.WriteLine($"SPACE BANNER: Money {royMatt.money}, Location {currentPlanet.name}," +
-                $" Cargo {r1.cargoHold} Space Beers");
-            //
+            Console.WriteLine($" SPACE BANNER | ${royMatt.money} | {currentPlanet.name}" +
+                              $" | {r1.cargoHold} Space Beers |");
         }
-        // Displays Main Menu Options
+        
+        // Displays main menu options
         void DispayMainMenu()
         {
             Console.WriteLine("Main Menu");
@@ -46,7 +49,8 @@ namespace TeamExercise4
             Console.WriteLine(" 3) Travel");
             Console.WriteLine(" 4) Exit");
         }
-        // Handles Main Navigation
+        
+        // Handles main navigation from the user
         bool ElicitUserInput()
         {
             bool quit = false;
@@ -61,35 +65,45 @@ namespace TeamExercise4
                     Console.Clear();
                     SpaceBanner();
                     isValid = true;
+
                     switch (choice)
                     {
                         case 1:
                             r1.cargoHold += royMatt.Buy(this.currentPlanet);
                             break;
+
                         case 2:
                             r1.cargoHold -= royMatt.Sell(r1.cargoHold, this.currentPlanet);
                             break;
+
                         case 3:
                             r1.TravelTo(ref this.currentPlanet, planets);
                             break;
+
                         case 4:
-                            Console.WriteLine("goodbye");
+                            Console.WriteLine("\nThanks for playing! Until your next adventure!\n");
+                            Console.ReadLine();
                             quit = true;
                             break;
+
                         default:
                             isValid = false;
-                            Console.WriteLine("too much space beer, try again");
+                            Console.WriteLine("You've had too much space beer, please try again.");
                             break;
                     }
                 }
+
                 catch (FormatException)
                 {
                     isValid = false;
                 }
             }
             while (!quit && !isValid);
+
             return quit;
         }
+
+        // Constructor qualifies planets array
         public GameSpaceRunner()
         {
             this.currentPlanet = planets[0];

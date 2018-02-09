@@ -8,12 +8,11 @@ namespace TeamExercise4
 {
     public class Planet
     {
-        int products;
-        decimal money;
         public string name;
         public decimal buyPrice;
         public decimal sellPrice;
 
+        // Constructor for SpaceBanner(), qualifying name, buyPrice, and sellPrice
         public Planet(string name, decimal buyPrice, decimal sellPrice)
         {
             this.name = name;

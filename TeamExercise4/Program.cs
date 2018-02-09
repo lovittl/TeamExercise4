@@ -10,14 +10,18 @@ namespace TeamExercise4
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("** Welcome to Interstellar Trader! ** \n");
-            Console.WriteLine("In this game you can travel to worlds, trade goods, and make money.\n");
-            Console.WriteLine(" You are aboard the Rover One spaceship, in the galactic" +
-                "alliance.");
-            Console.WriteLine("The objective is to become the richest space trader.\n");
+            //Splash screen explaining a background on the game
+            Console.WriteLine("** WELCOME TO INTERSTELLAR TRADER! **\n");
+            Console.WriteLine("In this game you can travel to different planets, trade goods, " +
+                              "and make money.\n");
+            Console.WriteLine("You are aboard the Rover One spaceship.\n");
+            Console.WriteLine("Your objective is to buy, sell, and travel your way through the " +
+                              "galaxy.\n");
             Console.WriteLine("Godspeed Trader!\n");
             Console.WriteLine("Hit enter to continue.");
-            Console.ReadLine(); //stops execution to view splash
+            Console.ReadLine();
+
+            // Creates an instance of the GameSpaceRunner class
             GameSpaceRunner runner = new GameSpaceRunner();
             runner.Run();
 
